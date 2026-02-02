@@ -9,7 +9,7 @@ def cal(a, o, c):
     if o == '-':
         return a - c
     if o == '/':
-        return a / c
+        return int(a / c)
     if o == '*':
         return a * c
     return False
