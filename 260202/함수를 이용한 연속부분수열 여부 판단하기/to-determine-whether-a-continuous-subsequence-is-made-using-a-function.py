@@ -4,11 +4,11 @@ b = list(map(int, input().split()))
 
 # Please write your code here.
 def is_in(a, b):
-    st_a, st_b = '', ''
+    st_a, st_b = ',', ','
     for w in a:
-        st_a += str(w)
+        st_a += (str(w) + ',')
     for w in b:
-        st_b += str(w)
+        st_b += (str(w) + ',')
     
     return st_b in st_a
 
