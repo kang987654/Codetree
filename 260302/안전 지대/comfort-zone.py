@@ -5,16 +5,21 @@ grid = [list(map(int, input().split())) for _ in range(n)]
 dr = [-1, +1, +0, +0]
 dc = [+0, +0, -1, +1]
 
-
 safe = []
+stack = []
 
 def dfs(x, y):
-    for di, dj in zip(dr, dc):
-        next_i, next_j = x + di, y + dj
-        if 0 <= next_i < n and 0 <= next_j < m and \
-        grid[next_i][next_j] and (not visited[next_i][next_j]):
-            visited[next_i][next_j] = True
-            dfs(next_i, next_j)
+    stack.append((x, y))
+
+    while stack:
+        now_x, now_y = stack.pop()
+
+        for di, dj in zip(dr, dc):
+            next_i, next_j = now_x + di, now_y + dj
+            if 0 <= next_i < n and 0 <= next_j < m and \
+            grid[next_i][next_j] and (not visited[next_i][next_j]):
+                visited[next_i][next_j] = True
+                stack.append((next_i, next_j))
 
 for k in range(1, max(map(max, grid))):
     # 침수
