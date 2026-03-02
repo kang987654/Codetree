@@ -33,5 +33,8 @@ for k in range(1, max(map(max, grid))):
                 region += 1
     safe.append((k, region))
 
-safe.sort(key=lambda r: r[1], reverse=True)
-print(safe[0][0], safe[0][1])
+if safe:
+    safe.sort(key=lambda r: r[1], reverse=True)
+    print(safe[0][0], safe[0][1])
+else:
+    print(1, 0)
