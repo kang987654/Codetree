@@ -28,7 +28,7 @@ for i in range(n):
 
 w, b, g = 0, 0, 0
 for i, s in enumerate(state):
-    if s >= 202:
+    if s // 100 >= 2 and s % 100 >= 2:
         g += 1
     elif color[i] == 'W':
         w += 1
