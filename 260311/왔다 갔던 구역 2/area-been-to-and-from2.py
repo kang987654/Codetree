@@ -10,10 +10,14 @@ for _ in range(n):
 ground = [0] * 2001
 now = 1000
 for i in range(n):
-    d = -1 if dir[i] == 'L' else 1
-    for s in range(x[i]):
-        now += d
-        ground[now] += 1
+    if dir[i] == 'L':
+        for _ in range(x[i]):
+            now -= 1
+            ground[now] += 1
+    else:
+        for _ in range(x[i]):
+            ground[now] += 1
+            now += 1
 
 cnt = 0
 for g in ground:
