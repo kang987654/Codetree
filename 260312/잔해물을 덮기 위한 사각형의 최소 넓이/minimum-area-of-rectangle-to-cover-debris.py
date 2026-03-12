@@ -14,13 +14,13 @@ for r1, c1, r2, c2 in zip(x1, y1, x2, y2):
     v -= 1
 
 a1, b1, a2, b2 = 0, 0, 0, 0
-got_first = False
+remain, got_first = False, False
 for i in range(2000):
     for j in range(2000):
         if new_plane[i][j] == 1:
             a2, b2 = i, j
             if not got_first:
                 a1, b1 = i, j
-                got_first = True
+                remain, got_first = True, True
 
-print((a2+1 - a1) * (b2+1 - b1))
+print((a2+1 - a1) * (b2+1 - b1) if remain else 0)
