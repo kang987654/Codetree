@@ -13,14 +13,16 @@ for r1, c1, r2, c2 in zip(x1, y1, x2, y2):
             new_plane[r][c] = v
     v -= 1
 
-a1, b1, a2, b2 = 0, 0, 0, 0
-remain, got_first = False, False
+remain = False
+a1, b1, a2, b2 = 2000, 2000, 0, 0
 for i in range(2000):
     for j in range(2000):
         if new_plane[i][j] == 1:
-            a2, b2 = i, j
-            if not got_first:
-                a1, b1 = i, j
-                remain, got_first = True, True
+            remain = True
+
+            a1 = min(i, a1)
+            a2 = max(i, a2)
+            b1 = min(j, b1)
+            b2 = max(j, b2)
 
 print((a2+1 - a1) * (b2+1 - b1) if remain else 0)
