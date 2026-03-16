@@ -25,8 +25,8 @@ for vi, ti in zip(v2, t2):
 
 a, b = 0, 0
 i = 0
+cnt = -1
 prev = 's'
-cnt = 0
 while i < sum(t):
     a += A[i]
     b += B[i]
