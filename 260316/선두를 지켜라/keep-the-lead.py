@@ -35,7 +35,7 @@ while i < sum(t):
     if a > b and prev != 'a':
         cnt += 1
         prev = 'a'
-    if a > b and prev != 'b':
+    if a < b and prev != 'b':
         cnt += 1
         prev = 'b'
 
