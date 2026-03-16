@@ -5,7 +5,7 @@ arr = [int(input()) for _ in range(n)]
 max_cnt = 0
 cnt = 1
 prev = -1
-for a in arr:
+for a in arr + [-1]:
     if a == prev:
         cnt += 1
     else:
