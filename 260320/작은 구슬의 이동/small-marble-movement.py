@@ -15,12 +15,14 @@ if d == 'L':
 if d == 'R':
     d = 3
 
-s = 1
-for _ in range(t+1):
+# 수치 조정
+r, c = r-1, c-1
+s = 1   # sign
+for _ in range(t):
     next_r, next_c = r + s*dr[d], c + s*dc[d]
-    if not (0 <= next_r < n and 0 <= next_c < n):
+    if 0 <= next_r < n and 0 <= next_c < n:
+        r, c = next_r, next_c
+    else:
         s *= -1
-        next_r, next_c = r + s*dr[d], c + s*dc[d]
-    r, c = next_r, next_c
 
-print(r, c)
+print(r+1, c+1)
