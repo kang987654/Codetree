@@ -10,7 +10,7 @@ r, c = n // 2, n // 2
 
 i = 1
 _len = 1
-while i < n*n:
+while i <= n*n:
     for _ in range(_len):
         grid[r][c] = i
         i += 1
