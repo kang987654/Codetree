@@ -29,20 +29,20 @@ while 0 <= laser_r < n and 0 <= laser_c < n:
     if grid[laser_r][laser_c] == '/':
         if laser_d == 'U':
             laser_d = 'R'
-        if laser_d == 'D':
+        elif laser_d == 'D':
             laser_d = 'L'
-        if laser_d == 'L':
+        elif laser_d == 'L':
             laser_d = 'D'
-        if laser_d == 'R':
+        elif laser_d == 'R':
             laser_d = 'U'
     else:   # grid[laser_r][laser_c] == '\\':
         if laser_d == 'U':
             laser_d = 'L'
-        if laser_d == 'D':
+        elif laser_d == 'D':
             laser_d = 'R'
-        if laser_d == 'L':
+        elif laser_d == 'L':
             laser_d = 'U'
-        if laser_d == 'R':
+        elif laser_d == 'R':
             laser_d = 'D'
 
     dr, dc = head[laser_d]
