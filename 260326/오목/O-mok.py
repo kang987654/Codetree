@@ -35,8 +35,9 @@ def omok():
         for j in range(2, 19-2):
             if board[i][j] != 0 and check_is_winner(i, j, board[i][j]):
                 return board[i][j], i+1, j+1
-    return 0
+    return 0, 0, 0
 
 winner, r, c = omok()
 print(winner)
-print(r, c)
+if winner:
+    print(r, c)
