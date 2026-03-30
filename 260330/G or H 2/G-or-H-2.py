@@ -18,5 +18,6 @@ def max_pair():
                 r = i+size-1
 
                 return people[r][0] - people[l][0]
+    return 0
 
 print(max_pair())
