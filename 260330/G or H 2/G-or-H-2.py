@@ -9,6 +9,7 @@ people = sorted(zip(pos, alpha), key=lambda pa: pa[0])
 
 s_alpha = [p[1] for p in people]
 def max_pair():
+    max_size = 0
     for size in range(n, 1, -1):
         for i in range(n+1 - size):
             # G 로만 or H 로만 or 정확히 같은 개수
@@ -18,7 +19,7 @@ def max_pair():
                 l = i
                 r = i+size-1
 
-                return people[r][0] - people[l][0]
-    return 0
+                max_size = max(people[r][0] - people[l][0], max_size)
+    return max_size
 
 print(max_pair())
