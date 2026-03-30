@@ -13,7 +13,10 @@ for i in range(N):
     bucket[pos[i]-1] += candy[i]
 
 answer = 0
-for i in range(K, len(bucket)-K+1):
-    answer = max(sum(bucket[i-K:i+K+1]), answer)
+if len(bucket) > 2*K:
+    for i in range(K, len(bucket)-K+1):
+        answer = max(sum(bucket[i-K:i+K+1]), answer)
+else:
+    answer = sum(bucket)
 
 print(answer)
