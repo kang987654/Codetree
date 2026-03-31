@@ -8,9 +8,16 @@ if N <= 5:
 else:
     answer = 5*5*5 * 2
 
-    c1_1, c2_1, c3_1 = set(range(a1-2, a1+3)), set(range(b1-2, b1+3)), set(range(c1-2, c1+3))
-    c1_2, c2_2, c3_2 = set(range(a2-2, a2+3)), set(range(b2-2, b2+3)), set(range(c2-2, c2+3))
-    dup = len(c1_1 & c1_2) * len(c2_1 & c2_2) * len(c3_1 & c3_2)
+    numbers = [N] + list(range(1, N))
+    c_a1 = set([numbers[a1-2], numbers[a1-1], numbers[a1], numbers[(a1+1) % N], numbers[(a1+2) % N]])
+    c_b1 = set([numbers[b1-2], numbers[b1-1], numbers[b1], numbers[(b1+1) % N], numbers[(b1+2) % N]])
+    c_c1 = set([numbers[c1-2], numbers[c1-1], numbers[c1], numbers[(c1+1) % N], numbers[(c1+2) % N]])
+
+    c_a2 = set([numbers[a2-2], numbers[a2-1], numbers[a2], numbers[(a2+1) % N], numbers[(a2+2) % N]])
+    c_b2 = set([numbers[b2-2], numbers[b2-1], numbers[b2], numbers[(b2+1) % N], numbers[(b2+2) % N]])
+    c_c2 = set([numbers[c2-2], numbers[c2-1], numbers[c2], numbers[(c2+1) % N], numbers[(c2+2) % N]])
+    
+    dup = len(c_a1 & c_a2) * len(c_b1 & c_b2) * len(c_c1 & c_c2)
 
     answer -= dup
 
